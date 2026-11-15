@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Growth Marketing 쇼핑몰" />
+    <title>EDIT SELECT — Curated Lifestyle</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="notice">EDIT SELECT</div>
+    <header>
+      <a class="logo" href="./">EDIT<span>SELECT</span></a>
+      <nav>
+        <button data-category="전체">ALL</button
+        ><button data-category="의류">CLOTHING</button
+        ><button data-category="가방">BAGS</button
+        ><button data-category="신발">SHOES</button
+        ><button data-category="메이크업">BEAUTY</button>
+      </nav>
+      <div class="actions">
+        <button id="searchToggle" aria-label="검색">⌕</button
+        ><button id="cartToggle">BAG <span id="cartCount">0</span></button>
+      </div>
+      <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1594664289021363');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1594664289021363&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <span class="eyebrow">THE CURATED EDIT · 2026</span>
+          <h1>Find your<br /><em>everyday</em> favorite.</h1>
+          <p>
+            당신의 일상에 영감을 더하는 취향의 발견.<br />지금 가장 사랑받는
+            아이템을 만나보세요.
+          </p>
+          <a href="#catalog" class="hero-cta">EXPLORE COLLECTION ↗</a>
+        </div>
+        <div class="hero-visual" id="heroVisual">
+          <div class="hero-overlay">
+            SELECTED FOR YOU<br /><small>STYLE · OBJECT · BEAUTY</small>
+          </div>
+        </div>
+      </section>
+      <section class="benefits">
+        <span>✦ CURATED COLLECTION</span><span>✦ EDITOR'S PICKS</span
+        ><span>✦ DISCOVER YOUR STYLE</span>
+      </section>
+      <section id="catalog" class="catalog">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">THE COLLECTION</span>
+            <h2>Discover the edit<span>.</span></h2>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div id="categories" class="chips"></div>
+          <div class="tools">
+            <input
+              id="search"
+              placeholder="상품명 · 브랜드 검색"
+              aria-label="상품 검색"
+            /><select id="sort" aria-label="정렬">
+              <option value="rank">인기순</option>
+              <option value="priceAsc">낮은 가격순</option>
+              <option value="priceDesc">높은 가격순</option>
+              <option value="reviews">리뷰 많은순</option>
+            </select>
+          </div>
+        </div>
+        <p class="count" id="resultCount"></p>
+        <div class="product-grid" id="products"></div>
+        <button id="loadMore" class="load-more">VIEW MORE ↓</button>
+      </section>
+    </main>
+    <footer>
+      <strong>EDIT SELECT</strong>
+      <p>상품 및 리뷰 데이터 출처: W Concept</p>
+      <p>
+        본 사이트는 W Concept 공식 사이트가 아니며 구매·결제·배송 서비스를
+        제공하지 않습니다.
+      </p>
+    </footer>
+    <div class="backdrop" id="backdrop" hidden></div>
+    <aside class="drawer" id="cartDrawer" aria-label="장바구니">
+      <div class="drawer-head">
+        <h2>SHOPPING BAG</h2>
+        <button id="cartClose">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="drawer-bottom">
+        <div class="total">
+          <span>TOTAL</span><strong id="cartTotal">₩0</strong>
+        </div>
+        <button id="checkout" class="primary">CHECKOUT →</button>
+        <p>모의 주문이며 실제 결제되지 않습니다.</p>
+      </div>
+    </aside>
+    <div
+      class="modal"
+      id="productModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="상품 상세"
+      hidden
+    >
+      <button class="modal-close" id="modalClose">✕</button>
+      <div id="productDetail"></div>
+    </div>
+    <div
+      class="modal checkout-modal"
+      id="checkoutModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="모의 주문"
+      hidden
+    >
+      <button class="modal-close" id="checkoutClose">✕</button>
+      <div id="checkoutContent"></div>
+    </div>
+    <div id="toast" role="status"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
